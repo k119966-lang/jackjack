@@ -179,6 +179,12 @@
 
   updateScrollableTables();
 
+  // 웹폰트가 적용되면 글자 폭이 달라져 넘침 여부가 바뀝니다.
+  // 로드 시점에만 재면 실제로는 넘치지 않는 표에 tabindex 가 남습니다.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(updateScrollableTables);
+  }
+
   var resizeTimer;
   window.addEventListener('resize', function () {
     clearTimeout(resizeTimer);

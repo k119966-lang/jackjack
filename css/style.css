@@ -240,7 +240,8 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 /* 점 목록 */
-.list { display: grid; gap: var(--sp-3); }
+.list { display: grid; gap: var(--sp-3); margin-top: var(--sp-4); }
+.list + .p, .list + p { margin-top: var(--sp-4); }
 .list > li { position: relative; padding-left: var(--sp-4); }
 .list > li::before {
   content: "";
@@ -632,7 +633,16 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
    ========================================================================== */
 .price__intro { margin-top: var(--sp-5); color: var(--sand-text); }
 
-.table--price th, .table--price td { padding-right: var(--sp-5); }
+/* 항목명이 길어 nowrap 이면 375px에서 마지막 열이 화면 밖으로 밀립니다.
+   '실제 결제 금액'은 고지의 핵심이라 가로 스크롤 뒤에 숨으면 안 됩니다. */
+.table--price tbody th { white-space: normal; min-width: 8.5em; }
+.table--price th, .table--price td { padding-right: var(--sp-3); }
+.table--price .num-cell { font-size: 1em; }
+
+@media (min-width: 600px) {
+  .table--price th, .table--price td { padding-right: var(--sp-5); }
+  .table--price .num-cell { font-size: 1.15em; }
+}
 .table__sub {
   display: inline-block;
   margin-top: 2px;
