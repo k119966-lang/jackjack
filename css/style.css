@@ -564,3 +564,64 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
   }
   .table { font-size: var(--fs-body); }
 }
+
+/* ==========================================================================
+   ④ 시술 전 확인사항 · 부작용 및 주의사항
+
+   ⚠️ 이 블록의 크기·대비 규칙은 디자인 선택이 아니라 준수 사항입니다.
+      의료법 시행령 제23조가 중요 정보를 "글씨 크기를 작게 하는 등의 방법으로
+      눈에 잘 띄지 않게" 하는 것을 금지합니다.
+      · 본문보다 작은 font-size 를 주지 마십시오
+      · --sand, --line 등 대비가 낮은 색을 본문색으로 쓰지 마십시오
+      · display:none / height:0 / details 기본 닫힘 처리를 하지 마십시오
+   ========================================================================== */
+.safety {
+  /* 진료 안내와 이어지되 '읽고 지나치지 않도록' 배경으로 구분합니다.
+     대비를 낮추는 것이 아니라 오히려 구분을 주는 방향입니다. */
+  background: rgba(168, 137, 90, 0.06);
+  border-top: 1px solid var(--line);
+}
+
+/* 본문과 동일한 크기·색. 축소 금지. */
+.safety__list > li {
+  font-size: var(--fs-body);
+  color: var(--ink);
+}
+.safety__list > li::before { background: var(--seal); }  /* paper 위 5.88:1 */
+
+/* 시술 후 이상 증상 대응 — 마케팅이 아니라 안전 고지 영역이므로 시각적으로 분리합니다 */
+.safety__contact {
+  margin-top: var(--sp-7);
+  padding: var(--sp-5);
+  border: 1px solid var(--sand);        /* 3.29:1 — UI 경계 3:1 충족 */
+  background: var(--paper);
+}
+.safety__contact-title {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-3);
+}
+.safety__contact .p { color: var(--ink); }
+
+.safety__closing {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--sand);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* 가격표 섹션에 반복 노출하는 요약 블록 (같은 규칙 적용) */
+.safety-recap {
+  margin-top: var(--sp-7);
+  padding: var(--sp-5);
+  border: 1px solid var(--sand);
+}
+.safety-recap__title {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-3);
+}
+.safety-recap p { font-size: var(--fs-body); color: var(--ink); }
+.safety-recap a { color: var(--ink); }
