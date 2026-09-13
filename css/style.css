@@ -805,3 +805,79 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
 @media (min-width: 600px) {
   .consent__row { grid-template-columns: 116px 1fr; gap: var(--sp-4); }
 }
+
+/* ==========================================================================
+   ⑩ 푸터
+   ========================================================================== */
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);              /* 15.58:1 */
+  padding-block: var(--sp-8);
+  margin-top: var(--sp-8);
+}
+.site-footer a { color: var(--paper); }
+
+.site-footer__name {
+  font-family: var(--ff-serif);
+  font-size: var(--fs-h3);
+  margin-bottom: var(--sp-4);
+}
+
+.site-footer__dl {
+  display: grid;
+  gap: var(--sp-3);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+}
+.site-footer__row { display: grid; gap: 2px; }
+/* ink 배경 위에서 --bronze-hi 는 7.96:1 로 충분합니다.
+   ⚠️ --seal 은 ink 위 2.65:1 이라 여기 쓰면 안 됩니다. */
+.site-footer__row dt { color: var(--bronze-hi); }
+.site-footer__row dd { margin: 0; }
+
+.site-footer__core {
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid rgba(244, 239, 230, 0.22);
+}
+.site-footer__dl--sub { margin-top: var(--sp-6); }
+
+.site-footer__links {
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(244, 239, 230, 0.22);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+}
+
+.site-footer__copy {
+  margin-top: var(--sp-5);
+  font-size: 13px;
+  letter-spacing: 0;
+  color: var(--line);               /* ink 위 11.76:1 */
+}
+
+@media (min-width: 600px) {
+  .site-footer__row { grid-template-columns: 140px 1fr; gap: var(--sp-4); }
+}
+
+/* ==========================================================================
+   개인정보처리방침 페이지 (privacy.html)
+   ========================================================================== */
+.doc { padding-block: var(--sp-8); }
+.doc__title { font-size: var(--fs-h2); }
+.doc__updated {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+  color: var(--sand-text);
+}
+.doc h2 {
+  font-size: var(--fs-h3);
+  margin-top: var(--sp-7);
+  margin-bottom: var(--sp-3);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+}
+.doc p + p { margin-top: var(--sp-3); }
+.doc .list { margin-top: var(--sp-3); }
+.doc__back { margin-top: var(--sp-8); }
