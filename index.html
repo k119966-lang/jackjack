@@ -124,6 +124,47 @@
 </header>
 
 <main id="main">
+<!-- ============================================================ ② 히어로 -->
+<section class="hero" aria-labelledby="hero-title">
+
+  <!-- 방울(鈴) 파문 — 동심원만 사용합니다.
+       브랜드 컨셉을 추상으로만 표현하기 위한 장치이며 의미를 전달하지 않으므로
+       aria-hidden 처리했습니다. -->
+  <svg class="ripple hero__ripple" viewBox="0 0 320 320" aria-hidden="true" focusable="false">
+    <circle cx="160" cy="160" r="38"/>
+    <circle cx="160" cy="160" r="72"/>
+    <circle cx="160" cy="160" r="110"/>
+    <circle cx="160" cy="160" r="152"/>
+  </svg>
+
+  <div class="wrap hero__inner">
+    <p class="hero__hanja" aria-hidden="true">殊璃鈴</p>
+
+    <h1 class="hero__title" id="hero-title">슈리링의원</h1>
+
+    <p class="hero__lead">
+      집속초음파(슈링크)를 중심으로 하는 피부시술 의원입니다.<br>
+      30분 단위 완전예약제로, 상담부터 시술까지 원장 1인이 진행합니다.
+    </p>
+
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="#reserve">예약 문의하기</a>
+      <a class="btn btn--ghost" href="tel:{{대표전화}}">전화 {{대표전화}}</a>
+    </div>
+
+    <dl class="hero__meta">
+      <div class="hero__meta-row">
+        <dt>진료시간</dt>
+        <dd>10:00–13:00 / 14:00–19:00 · 일요일 휴진</dd>
+      </div>
+      <div class="hero__meta-row">
+        <dt>위치</dt>
+        <dd>서울 강남구 강남대로 438 스타플렉스 301호</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
 <!-- @@SECTIONS@@ -->
 </main>
 

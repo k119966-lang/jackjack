@@ -424,3 +424,92 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
   .bottombar { display: none; }
   body { padding-bottom: 0; }
 }
+
+/* ==========================================================================
+   ② 히어로
+   사진을 쓰지 않습니다. 11평 규모에서 대형 공간 사진은 실제와 어긋나고,
+   브리핑 §5도 이미지는 자리만 두라고 했습니다. 파문 그래픽이 그 자리를 대신합니다.
+   ========================================================================== */
+.hero {
+  position: relative;
+  overflow: hidden;            /* 파문이 화면 밖으로 흘러나가도 가로 스크롤이 생기지 않게 */
+  padding-block: var(--sp-9) var(--sp-8);
+}
+
+.hero__inner { position: relative; z-index: 1; }
+
+.hero__ripple {
+  width: 420px;
+  height: 420px;
+  right: -170px;
+  top: -70px;
+  opacity: 0.28;
+}
+
+.hero__hanja {
+  font-family: var(--ff-serif);
+  font-weight: 300;
+  font-size: var(--fs-h3);
+  letter-spacing: 0.24em;
+  color: var(--sand-text);
+  margin-bottom: var(--sp-3);
+}
+
+.hero__title {
+  font-size: var(--fs-h1);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.hero__lead {
+  margin-top: var(--sp-5);
+  font-size: var(--fs-lead);
+  font-weight: 300;
+  max-width: 30em;
+}
+
+.hero__actions {
+  margin-top: var(--sp-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.hero__meta {
+  margin-top: var(--sp-7);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: var(--sp-3);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+}
+.hero__meta-row { display: grid; gap: var(--sp-1); }
+.hero__meta dt { color: var(--sand-text); }
+.hero__meta dd { margin: 0; }
+
+@media (min-width: 600px) {
+  .hero__actions { flex-direction: row; }
+  .hero__actions .btn { flex: 0 1 auto; }
+  .hero__meta-row { grid-template-columns: 88px 1fr; gap: var(--sp-4); }
+}
+
+@media (min-width: 880px) {
+  .hero { padding-block: var(--sp-10) var(--sp-9); }
+  .hero__ripple { width: 620px; height: 620px; right: -190px; top: -120px; }
+}
+
+/* 진입 시 파문이 한 번만 아주 느리게 퍼집니다. 반복하지 않습니다. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__ripple circle {
+    transform-origin: 160px 160px;
+    animation: ripple-in 1200ms var(--ease) both;
+  }
+  .hero__ripple circle:nth-child(2) { animation-delay: 90ms; }
+  .hero__ripple circle:nth-child(3) { animation-delay: 180ms; }
+  .hero__ripple circle:nth-child(4) { animation-delay: 270ms; }
+}
+@keyframes ripple-in {
+  from { transform: scale(0.82); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
