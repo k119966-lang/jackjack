@@ -577,6 +577,108 @@
   </div>
 </section>
 
+<!-- ============================================================ ⑨ 예약 -->
+<!--
+  ⚠️ 개인정보 보호법 제15조제2항의 4가지 고지 사항은 하나라도 빠지면 과태료 대상입니다.
+     ① 수집·이용 목적 ② 수집 항목 ③ 보유·이용 기간
+     ④ 동의 거부 권리 및 거부에 따른 불이익   ← 특히 ④를 지우지 마십시오
+  ⚠️ 체크박스에 checked 기본값을 넣지 마십시오 (사전 체크 금지).
+  ⚠️ '전체 동의' 하나로 개별 동의를 대체하지 마십시오 (제22조제1항 위반).
+  ⚠️ '시술 항목' '관심 부위' '증상' 필드를 추가하지 마십시오.
+     그 순간 민감정보(건강정보)가 되어 별도 동의 절차가 필요해집니다.
+  ⚠️ 실제 운영 시 HTTPS 필수입니다.
+-->
+<section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+  <div class="wrap wrap--narrow">
+
+    <span class="sec-label">reservation</span>
+    <hr class="sec-rule">
+    <h2 class="sec-title" id="reserve-title">예약 문의</h2>
+
+    <p class="sec-lead">
+      완전예약제입니다. 예약 없이 방문하시면 진료를 받으실 수 없습니다.
+    </p>
+
+    <p class="p">
+      아래 양식은 <strong>예약 문의 접수</strong>입니다.
+      접수 후 확인 연락을 드려 예약 시간을 확정합니다. 제출만으로 예약이 확정되지는 않습니다.
+      전화로도 문의하실 수 있습니다 — <a href="tel:{{대표전화}}">{{대표전화}}</a>
+    </p>
+
+    <form class="form" id="reserve-form" novalidate>
+
+      <div class="field">
+        <label class="field__label" for="rf-name">
+          이름 <span class="field__required" aria-hidden="true">*</span>
+          <span class="sr-only">(필수)</span>
+        </label>
+        <input class="field__input" type="text" id="rf-name" name="name"
+               autocomplete="name" required maxlength="40"
+               aria-describedby="rf-name-error">
+        <p class="field__error" id="rf-name-error" role="alert"></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="rf-tel">
+          연락처 <span class="field__required" aria-hidden="true">*</span>
+          <span class="sr-only">(필수)</span>
+        </label>
+        <input class="field__input" type="tel" id="rf-tel" name="tel"
+               autocomplete="tel" required inputmode="tel" maxlength="20"
+               placeholder="010-0000-0000"
+               aria-describedby="rf-tel-hint rf-tel-error">
+        <p class="field__hint" id="rf-tel-hint">연락 가능한 번호를 적어 주십시오.</p>
+        <p class="field__error" id="rf-tel-error" role="alert"></p>
+      </div>
+
+      <!-- 개인정보 수집·이용 동의 ---------------------------------------- -->
+      <fieldset class="consent">
+        <legend class="consent__legend">개인정보 수집·이용 동의</legend>
+
+        <dl class="consent__terms">
+          <div class="consent__row">
+            <dt>수집·이용 목적</dt>
+            <dd>진료 예약 문의 접수 및 회신</dd>
+          </div>
+          <div class="consent__row">
+            <dt>수집 항목</dt>
+            <dd>이름, 연락처</dd>
+          </div>
+          <div class="consent__row">
+            <dt>보유·이용 기간</dt>
+            <dd>수집일로부터 1년</dd>
+          </div>
+          <div class="consent__row">
+            <dt>동의 거부 권리</dt>
+            <dd>동의를 거부하실 권리가 있습니다. 거부하시는 경우 예약 문의 접수가 제한됩니다.</dd>
+          </div>
+        </dl>
+
+        <div class="field field--check">
+          <input class="check__input" type="checkbox" id="rf-consent" name="consent" required
+                 aria-describedby="rf-consent-error">
+          <label class="check__label" for="rf-consent">
+            위 내용을 확인했으며 개인정보 수집·이용에 동의합니다.
+            <span class="field__required" aria-hidden="true">*</span>
+            <span class="sr-only">(필수)</span>
+          </label>
+        </div>
+        <p class="field__error" id="rf-consent-error" role="alert"></p>
+
+        <p class="note consent__link">
+          자세한 내용은 <a href="privacy.html">개인정보처리방침</a>을 확인해 주십시오.
+        </p>
+      </fieldset>
+
+      <button class="btn btn--primary btn--block" type="submit">예약 문의 보내기</button>
+
+      <!-- 제출 결과 안내. 스크린리더에도 전달되도록 aria-live 를 둡니다. -->
+      <p class="form__status" id="rf-status" role="status" aria-live="polite"></p>
+    </form>
+
+  </div>
+</section>
+
 <!-- @@SECTIONS@@ -->
 </main>
 

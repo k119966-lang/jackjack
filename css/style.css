@@ -717,3 +717,91 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
   .location__map-slot { margin-top: 0; aspect-ratio: 3 / 4; }
   .location__info .sub-title:first-child { margin-top: 0; }
 }
+
+/* ==========================================================================
+   ⑨ 예약 문의 폼
+   ========================================================================== */
+.wrap--narrow { max-width: calc(620px + var(--gutter) * 2); }
+
+.form { margin-top: var(--sp-7); display: grid; gap: var(--sp-5); }
+
+.field { display: grid; gap: var(--sp-2); }
+.field__label { font-size: var(--fs-small); font-weight: 500; letter-spacing: 0; }
+.field__required { color: var(--seal); }   /* paper 위 5.88:1 */
+
+.field__input {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--paper);
+  /* 입력 테두리는 UI 컴포넌트라 3:1 이 필요합니다.
+     --line(1.32:1)은 장식용이라 쓸 수 없어 --sand(3.29:1)를 씁니다. */
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  transition: border-color var(--dur) var(--ease);
+}
+.field__input:hover { border-color: var(--sand-text); }
+.field__input::placeholder { color: var(--sand-text); opacity: 1; }
+
+.field__hint, .field__error {
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+  margin: 0;
+}
+.field__hint { color: var(--sand-text); }
+.field__error { color: var(--seal); font-weight: 500; }
+.field__error:empty { display: none; }
+
+.field__input[aria-invalid="true"] { border-color: var(--seal); border-width: 2px; }
+
+/* 동의 블록 */
+.consent {
+  margin: 0;
+  padding: var(--sp-5);
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+}
+.consent__legend {
+  padding: 0 var(--sp-2);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.consent__terms {
+  display: grid;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+}
+.consent__row { display: grid; gap: 2px; }
+.consent__row dt { color: var(--sand-text); }
+.consent__row dd { margin: 0; }
+
+.field--check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+}
+.check__input {
+  flex: 0 0 auto;
+  width: 20px; height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--ink);
+}
+.check__label { font-size: var(--fs-small); letter-spacing: 0; cursor: pointer; }
+
+.consent__link { margin-top: var(--sp-4); }
+
+.form__status {
+  margin: 0;
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+}
+.form__status:empty { display: none; }
+.form__status[data-state="ok"] { color: var(--ink); font-weight: 500; }
+.form__status[data-state="error"] { color: var(--seal); font-weight: 500; }
+
+@media (min-width: 600px) {
+  .consent__row { grid-template-columns: 116px 1fr; gap: var(--sp-4); }
+}
