@@ -666,3 +666,18 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
   position: absolute;
   left: var(--sp-2);
 }
+
+/* ==========================================================================
+   ⑥ 진료 방식
+   ========================================================================== */
+.practice { margin-top: var(--sp-5); }
+.practice__item .sub-title:first-child { margin-top: var(--sp-6); }
+
+@media (min-width: 880px) {
+  .practice {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-7);
+  }
+  .practice__item .sub-title:first-child { margin-top: var(--sp-5); }
+}
