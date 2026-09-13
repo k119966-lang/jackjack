@@ -681,3 +681,39 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
   }
   .practice__item .sub-title:first-child { margin-top: var(--sp-5); }
 }
+
+/* ==========================================================================
+   ⑦ 진료시간 / ⑧ 오시는 길
+   ========================================================================== */
+.table--hours td { font-variant-numeric: tabular-nums; }
+.is-closed { color: var(--seal); font-weight: 500; }   /* paper 위 5.88:1 */
+
+.location { margin-top: var(--sp-5); }
+.location__address {
+  font-style: normal;
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+}
+.location__actions { margin-top: var(--sp-5); }
+
+/* 이미지를 넣지 않고 자리만 표시합니다 (브리핑 §5) */
+.location__map-slot {
+  margin-top: var(--sp-6);
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--sand);
+  background: rgba(168, 137, 90, 0.05);
+}
+
+@media (min-width: 880px) {
+  .location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-7);
+    align-items: start;
+  }
+  .location__map-slot { margin-top: 0; aspect-ratio: 3 / 4; }
+  .location__info .sub-title:first-child { margin-top: 0; }
+}

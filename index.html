@@ -487,6 +487,96 @@
   </div>
 </section>
 
+<!-- =================================================== ⑦ 진료시간 · 휴진 -->
+<!--
+  월 캘린더를 만들지 않았습니다. 일요일 외의 휴진일(공휴일·학회 등) 데이터를
+  관리할 방법이 정해지지 않아, 데이터 없이 만들면 '일요일만 회색인 달력'이 되어
+  표보다 정보량이 적어집니다. 휴진일 관리 방식이 정해지면 2차로 추가합니다.
+-->
+<section class="section" id="hours" aria-labelledby="hours-title">
+  <div class="wrap">
+
+    <span class="sec-label">hours</span>
+    <hr class="sec-rule">
+    <h2 class="sec-title" id="hours-title">진료시간 · 휴진 안내</h2>
+
+    <div class="table-scroll">
+      <table class="table table--hours">
+        <caption class="table__caption">요일별 진료시간</caption>
+        <thead>
+          <tr>
+            <th scope="col">요일</th>
+            <th scope="col">진료시간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">월요일–금요일</th><td>10:00–13:00 / 14:00–19:00</td></tr>
+          <tr><th scope="row">토요일</th><td>{{토요일진료}}</td></tr>
+          <tr><th scope="row">일요일</th><td class="is-closed">휴진</td></tr>
+          <tr><th scope="row">공휴일</th><td>{{공휴일휴진}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="price__notes">
+      <li>점심시간은 13:00–14:00입니다. 이 시간에는 예약을 받지 않습니다.</li>
+      <li>30분 단위 예약제이며, 마지막 예약 가능 시각은 18:30입니다.</li>
+      <li>일요일은 휴진입니다.</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ====================================================== ⑧ 오시는 길 -->
+<!--
+  지도를 임베드하지 않았습니다.
+  브리핑 §3은 {{지도임베드}}를 요구하지만 §5가 "외부 요청은 Google Fonts만"이라고
+  못박았고, 지도 임베드는 외부 요청이자 제3자 쿠키를 발생시킵니다.
+  주소 + 도보 경로 + 지도 앱으로 여는 링크로 대체했습니다.
+
+  TODO — {{지도링크}} 를 채울 때 참고
+    · 네이버 지도와 카카오맵 모두 주소 검색 결과로 바로 여는 공개 URL 패턴이 있습니다.
+      실제 URL을 브라우저에서 확인한 뒤 넣어 주십시오. 추측으로 넣지 마십시오.
+    · 링크는 클릭 전까지 외부 요청을 만들지 않으므로 §5 제약에 걸리지 않습니다.
+-->
+<section class="section" id="location" aria-labelledby="location-title">
+  <div class="wrap">
+
+    <span class="sec-label">location</span>
+    <hr class="sec-rule">
+    <h2 class="sec-title" id="location-title">오시는 길</h2>
+
+    <div class="location">
+      <div class="location__info">
+        <h3 class="sub-title">주소</h3>
+        <address class="location__address">
+          서울특별시 강남구 강남대로 438<br>
+          스타플렉스(CGV 건물) 301호
+        </address>
+
+        <h3 class="sub-title">지하철</h3>
+        <p class="p">
+          강남역 {{강남역출구}} 출구에서 도보 {{강남역도보시간}}.
+        </p>
+
+        <p class="location__actions">
+          <a class="btn btn--ghost" href="{{지도링크}}" target="_blank" rel="noopener">
+            지도 앱에서 열기
+          </a>
+        </p>
+      </div>
+
+      <!-- 지도 이미지 자리 (선택)
+           넣을 경우 권장 규격: 가로 880px 이상, 16:9 또는 4:3, WebP/PNG, 200KB 이하.
+           ⚠️ 지도 서비스의 캡처 이미지는 저작권 확인이 필요합니다. -->
+      <div class="location__map-slot" aria-hidden="true">
+        <span class="note">지도 이미지 자리</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- @@SECTIONS@@ -->
 </main>
 
