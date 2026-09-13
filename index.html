@@ -371,6 +371,80 @@
   </div>
 </section>
 
+<!-- ============================================ ⑤ 비급여 진료비용 고지표 -->
+<!--
+  ⚠️ 이 섹션은 '광고'가 아니라 '고지'입니다.
+     의료법 제45조 고지는 정보 제공 의무이고, 같은 가격을 강조·비교·할인 프레임으로
+     내세우는 순간 제56조의 광고 규제 영역으로 넘어갑니다.
+     따라서 다음을 지킵니다.
+       · 배경색·장식·파문 그래픽을 넣지 않습니다
+       · '한정' '특가' '최저' '이벤트' '혜택' 류 수식어를 넣지 않습니다
+       · 권유형 문장 자체를 넣지 않습니다
+       · 시행규칙 제42조의2에 따라 상시 접근 가능해야 하므로 내비게이션 링크를 유지합니다
+       · 부작용 요약을 이 섹션에 1회 반복 노출합니다 (지우지 마십시오)
+
+  TODO — 확인 후 반영할 것
+     · 「비급여 진료비용 등의 고지 지침」 별지 서식의 열 구성.
+       심평원(HIRA) 표준 웹페이지 서식 가이드를 확인해 열을 맞출 것
+     · 집속초음파 시술의 부가가치세 과세 여부 — 세무사 유권해석 확인
+     · 부가세 포함 총액 표기가 의무인지 — 강남구보건소 의약과 유선 확인 권장
+-->
+<section class="section price" id="price" aria-labelledby="price-title">
+  <div class="wrap">
+
+    <h2 class="sec-title" id="price-title">비급여 진료비용 고지</h2>
+
+    <p class="p price__intro">
+      아래는 국민건강보험이 적용되지 않는 비급여 진료비용입니다.
+    </p>
+
+    <div class="table-scroll">
+      <table class="table table--price">
+        <caption class="table__caption">비급여 진료비용 (최종 변경일 {{가격최종변경일}})</caption>
+        <thead>
+          <tr>
+            <th scope="col">항목</th>
+            <th scope="col">단가<br><span class="table__sub">부가가치세 별도</span></th>
+            <th scope="col">실제 결제 금액<br><span class="table__sub">부가가치세 포함</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">집속초음파(슈링크) 1샷</th>
+            <td class="num-cell">1,500원</td>
+            <td class="num-cell num-cell--strong">1,650원</td>
+          </tr>
+          <tr>
+            <th scope="row">집속초음파(슈링크) 1,000샷 이상 구성</th>
+            <td class="num-cell">1,500,000원</td>
+            <td class="num-cell num-cell--strong">1,650,000원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="price__notes">
+      <li>표시 금액은 부가가치세를 포함한 실제 환자 부담 금액 기준이며, 고지한 금액을 초과하여 징수하지 않습니다.</li>
+      <li>1,000샷 이상 구성 금액은 1샷 단가에 샷수를 곱한 금액과 같습니다.</li>
+      <li>1,000샷 구성의 부위별 배분은 피부 상태와 시술 목표에 따라 상담에서 결정합니다.</li>
+      <li>시술 당일 최종 샷수와 총액을 확정해 동의를 받은 뒤 진행합니다.</li>
+      <li>최종 변경일: {{가격최종변경일}}</li>
+    </ul>
+
+    <!-- 부작용 반복 노출 — 시행령 제23조 대응. 삭제 금지. -->
+    <div class="safety-recap">
+      <h3 class="safety-recap__title">시술 전 확인해 주십시오</h3>
+      <p>
+        집속초음파 시술 후 홍반·부종·불편감·저릿한 느낌·압통이 흔히 나타날 수 있으며 대부분 일시적입니다.
+        드물게 열화상, 신경 손상 및 자극, 지방 위축, 과색소침착이 보고됩니다.
+        시술 여부와 적합성은 진료 후 의사가 판단합니다.
+      </p>
+      <p><a href="#safety">시술 전 확인사항 · 부작용 및 주의사항 전문 보기</a></p>
+    </div>
+
+  </div>
+</section>
+
 <!-- @@SECTIONS@@ -->
 </main>
 

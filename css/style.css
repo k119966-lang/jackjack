@@ -625,3 +625,44 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
 }
 .safety-recap p { font-size: var(--fs-body); color: var(--ink); }
 .safety-recap a { color: var(--ink); }
+
+/* ==========================================================================
+   ⑤ 비급여 진료비용 고지표
+   의도적으로 무미건조하게 둡니다. 배경색·장식·파문을 넣지 마십시오.
+   ========================================================================== */
+.price__intro { margin-top: var(--sp-5); color: var(--sand-text); }
+
+.table--price th, .table--price td { padding-right: var(--sp-5); }
+.table__sub {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--sand-text);
+}
+
+/* 숫자는 Cormorant Garamond 로 악센트를 줍니다 */
+.num-cell {
+  font-family: var(--ff-latin);
+  font-size: 1.15em;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  color: var(--sand-text);
+}
+.num-cell--strong { color: var(--ink); font-weight: 500; }
+
+.price__notes {
+  margin-top: var(--sp-5);
+  display: grid;
+  gap: var(--sp-2);
+  font-size: var(--fs-small);
+  letter-spacing: 0;
+  color: var(--sand-text);
+}
+.price__notes > li { position: relative; padding-left: var(--sp-4); }
+.price__notes > li::before {
+  content: "·";
+  position: absolute;
+  left: var(--sp-2);
+}
