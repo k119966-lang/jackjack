@@ -75,6 +75,9 @@ const won = n => n.toLocaleString('ko-KR') + '원';
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
   items.forEach(el => io.observe(el));
+
+  // 안전장치: 어떤 이유로든 관찰이 안 되면 1.5초 뒤 전부 보여줌
+  setTimeout(() => items.forEach(el => el.classList.add('is-in')), 1500);
 })();
 
 

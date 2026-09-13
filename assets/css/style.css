@@ -463,8 +463,10 @@ svg use{ fill:none; stroke:currentColor; stroke-width:1.5;
 .dock__main{ background:var(--lav); color:#fff; }
 
 /* ═══ 스크롤 등장 효과 ══════════════════════ */
-.reveal{ opacity:0; transform:translateY(30px); transition:opacity .9s var(--ease), transform .9s var(--ease); }
-.reveal.is-in{ opacity:1; transform:none; }
+/* 기본은 '보임'. 자바스크립트가 켜졌을 때만 숨겼다가 나타나게 함 */
+.reveal{ transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.js .reveal{ opacity:0; transform:translateY(30px); }
+.js .reveal.is-in{ opacity:1; transform:none; }
 
 /* ═══════════ 반응형 ═══════════════════════ */
 @media (max-width:1240px){
@@ -514,5 +516,5 @@ svg use{ fill:none; stroke:currentColor; stroke-width:1.5;
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
   html{ scroll-behavior:auto; }
-  .reveal{ opacity:1; transform:none; }
+  .reveal,.js .reveal{ opacity:1; transform:none; }
 }
