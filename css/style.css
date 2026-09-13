@@ -891,3 +891,30 @@ body { padding-bottom: calc(var(--bottombar-h) + env(safe-area-inset-bottom, 0px
 .doc p + p { margin-top: var(--sp-3); }
 .doc .list { margin-top: var(--sp-3); }
 .doc__back { margin-top: var(--sp-8); }
+
+/* ==========================================================================
+   ③ 원장 소개
+   약력은 객관적 사실만 둡니다. 평가·수량 과시 표현을 넣지 마십시오.
+   ========================================================================== */
+.doctor__statement {
+  margin-top: var(--sp-6);
+  font-family: var(--ff-serif);
+  font-weight: 300;
+  font-size: var(--fs-h3);
+  line-height: 1.62;
+  color: var(--ink);
+  padding-left: var(--sp-4);
+  border-left: 2px solid var(--bronze);
+}
+
+.doctor__cv > li::before { background: var(--sand); }
+
+@media (min-width: 880px) {
+  .doctor__statement { font-size: clamp(20px, 1.1vw + 12px, 26px); max-width: 22em; }
+}
+
+/* 헤더 로고의 인장 마크 */
+.logo__mark { width: 24px; height: 24px; flex: 0 0 auto; align-self: center; }
+@media (min-width: 880px) {
+  .logo__mark { width: 28px; height: 28px; }
+}
