@@ -165,6 +165,122 @@
   </div>
 </section>
 
+<!-- ======================================================== ③ 진료 안내 -->
+<!--
+  ⚠️ 이 섹션의 문안은 원장 감수가 필요합니다.
+     · 성능·효능·효과 서술은 식약처 허가 사용목적 문구를 그대로 인용하는 방식으로만 합니다.
+       허가사항을 벗어나면 의료기기법 제24조 위반 소지가 있습니다.
+     · 기전 서술은 '열응고점을 만든다'까지만 합니다. 콜라겐 재생·탄력 회복 등
+       이후 단계는 효과 주장으로 읽힙니다.
+     · 시술 과정 순서·소요시간에는 신뢰할 만한 1차 출처가 없습니다.
+       원장이 실제로 하는 순서와 시간만 채워 넣어야 합니다.
+-->
+<section class="section section--tight-after" id="treatment" aria-labelledby="treatment-title">
+  <div class="wrap">
+
+    <span class="sec-label">treatment</span>
+    <hr class="sec-rule">
+    <h2 class="sec-title" id="treatment-title">진료 안내</h2>
+
+    <p class="sec-lead">
+      집속초음파(HIFU)를 이용한 피부시술을 진행합니다.
+      아래는 시술의 원리와 진행 순서를 사실 위주로 정리한 내용입니다.
+    </p>
+
+    <!-- 사용 기기 ------------------------------------------------------ -->
+    <h3 class="sub-title">사용 기기</h3>
+    <p class="p">
+      이 의원에서 사용하는 집속초음파 의료기기는 <strong>{{기기모델명}}</strong>입니다.
+      식품의약품안전처가 허가한 사용목적은 다음과 같습니다.
+    </p>
+    <blockquote class="quote">{{허가사용목적}}</blockquote>
+    <p class="p note">
+      이 페이지의 시술 설명은 위 허가 사용목적의 범위 안에서만 기술합니다.
+      보유 카트리지 구성은 {{카트리지구성}}입니다.
+    </p>
+
+    <!-- 작용 원리 ------------------------------------------------------ -->
+    <h3 class="sub-title">작용 원리</h3>
+    <p class="p">
+      집속초음파는 초음파 에너지를 피부 속 특정 깊이의 한 점에 모으는 방식입니다.
+      에너지가 모인 지점의 온도가 약 60~70℃까지 올라가면서
+      그 지점에 <strong>열응고점(TCP, Thermal Coagulation Point)</strong>이 만들어집니다.
+    </p>
+    <p class="p">
+      카트리지의 깊이에 따라 에너지가 도달하는 조직층이 달라집니다.
+    </p>
+
+    <div class="table-scroll">
+      <table class="table">
+        <caption class="table__caption">카트리지 깊이별 대응 조직층</caption>
+        <thead>
+          <tr>
+            <th scope="col">깊이</th>
+            <th scope="col">대응 조직층</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">1.5mm</th><td>표재 진피</td></tr>
+          <tr><th scope="row">3.0mm</th><td>심부 진피</td></tr>
+          <tr><th scope="row">4.5mm</th><td>SMAS층(표재성 근건막계) · 목의 활경근</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">
+      실제 사용하는 깊이는 시술 부위와 피부 상태에 따라 진료 상담에서 정합니다.
+    </p>
+
+    <!-- 시술 과정 ------------------------------------------------------ -->
+    <h3 class="sub-title">시술 과정</h3>
+    <ol class="steps">
+      <li class="step">
+        <span class="num">01</span>
+        <h4 class="step__title">상담</h4>
+        <p class="step__body">
+          시술 전 확인사항을 확인하고, 시술 범위와 예정 샷수를 정합니다.
+        </p>
+      </li>
+      <li class="step">
+        <span class="num">02</span>
+        <h4 class="step__title">준비</h4>
+        <p class="step__body">
+          시술 부위를 세안합니다. {{마취크림안내}}
+        </p>
+      </li>
+      <li class="step">
+        <span class="num">03</span>
+        <h4 class="step__title">시술</h4>
+        <p class="step__body">
+          젤을 바른 뒤 카트리지로 시술합니다. 소요시간은 {{시술소요시간}}입니다.
+        </p>
+      </li>
+      <li class="step">
+        <span class="num">04</span>
+        <h4 class="step__title">마무리</h4>
+        <p class="step__body">
+          젤을 닦아내고 시술 후 주의사항을 안내합니다.
+        </p>
+      </li>
+    </ol>
+    <!-- 이미지 자리 — 각 단계 옆에 넣을 경우 권장 규격:
+         가로 640px 이상, 4:3 또는 3:2, WebP 또는 JPEG, 파일당 120KB 이하.
+         ⚠️ 시술 장면을 직접 노출하는 사진은 의료법 제56조에 걸립니다. 넣지 마십시오. -->
+
+    <!-- 샷 안내 -------------------------------------------------------- -->
+    <h3 class="sub-title">‘샷’이란</h3>
+    <p class="p">
+      샷은 장비가 피부 한 지점 또는 한 라인에 초음파 에너지를 1회 조사하는 단위입니다.
+      업계에서 통용되는 표현이며, 사용하는 카트리지와 모드에 따라 산정 방식이 달라질 수 있습니다.
+      이 의원의 산정 기준은 {{샷산정기준}}입니다.
+    </p>
+    <p class="p">
+      시술 전 상담에서 예정 샷수와 총액을 안내해 드리고,
+      시술 당일 최종 샷수와 총액을 확정해 동의를 받은 뒤 진행합니다.
+    </p>
+
+  </div>
+</section>
+
 <!-- @@SECTIONS@@ -->
 </main>
 
