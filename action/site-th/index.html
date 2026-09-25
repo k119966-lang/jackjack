@@ -45,9 +45,9 @@
 
 <main>
   <div class="hero">
-    <h1>คลินิกในโซลที่ทำหัตถการเดียว<br>Shurink (Ultraformer)</h1>
-    <!-- 슈링크 구형이면 Ultraformer III, 유니버스면 Ultraformer MPT로 확정 후 교체 -->
-    <p>ชูริงค์ (Shurink) คือชื่อที่ใช้เรียกในเกาหลีของเครื่อง [Ultraformer III / Ultraformer MPT] ผลิตโดยบริษัท CLASSYS ประเทศเกาหลีใต้</p>
+    <h1>คลินิกในโซลที่ทำหัตถการเดียว<br>Shurink Universe (Ultraformer MPT)</h1>
+    <!-- 기기: 슈링크 유니버스 = Ultraformer MPT. 동일성은 클래시스 서면 회신 후 최종 확정 -->
+    <p>ชูริงค์ ยูนิเวิร์ส (Shurink Universe) คือชื่อที่ใช้เรียกในเกาหลีของเครื่อง Ultraformer MPT ผลิตโดยบริษัท CLASSYS ประเทศเกาหลีใต้</p>
     <a class="btn" href="#contact">ปรึกษาผ่าน LINE (ภาษาไทย)</a>
   </div>
 
@@ -64,12 +64,15 @@
 
   <section>
     <h2>ราคา</h2>
-    <table>
-      <tr><th>รายการ</th><th>ราคา (วอน)</th><th>ประมาณ (บาท)*</th></tr>
-      <tr><td>[ ] ช็อต</td><td>[ ]</td><td>[ ]</td></tr>
-      <tr><td>[ ] ช็อต</td><td>[ ]</td><td>[ ]</td></tr>
+    <!-- 환율: data-rate(1바트=몇 원)와 data-date만 바꾸면 바트 칸 자동 계산. 한국은행 ECOS 기준으로 갱신 -->
+    <table id="price" data-rate="0" data-date="[ ]">
+      <tr><th>รายการ</th><th>ราคา (วอน, รวม VAT)</th><th>ประมาณ (บาท)*</th></tr>
+      <tr><td>ราคาต่อช็อต</td><td data-krw="1100">1,100</td><td class="thb">–</td></tr>
+      <tr><td>ตัวอย่าง 300 ช็อต</td><td data-krw="330000">330,000</td><td class="thb">–</td></tr>
+      <tr><td>ตัวอย่าง 600 ช็อต</td><td data-krw="660000">660,000</td><td class="thb">–</td></tr>
+      <tr><td><b>คอร์สโอมากาเสะ</b><br><span class="note">แพทย์ประเมินใบหน้าแล้วกำหนดจำนวนช็อตให้เหมาะกับคุณ ราคาเดียว แจ้งจำนวนช็อตที่ใช้จริงให้ทราบทุกครั้ง</span></td><td data-krw="880000">880,000</td><td class="thb">–</td></tr>
     </table>
-    <p class="note">ราคาเดียวกับคนไข้ชาวเกาหลี ไม่มีค่าล่ามเพิ่ม · [รวม/ไม่รวม] VAT · *ราคาบาทเป็นราคาประมาณ ณ วันที่ [ ]</p>
+    <p class="note">ราคาเดียวกับคนไข้ชาวเกาหลี ไม่มีค่าล่ามเพิ่ม · ราคารวม VAT 10% แล้ว · ชำระเป็นเงินวอน · *ราคาบาทเป็นราคาประมาณ ณ วันที่ <span id="rate-date"></span></p>
   </section>
 
   <section>
@@ -90,7 +93,7 @@
 
   <section id="contact">
     <h2>ติดต่อ</h2>
-    <p>LINE: [@ID] · ที่อยู่: [ ] กรุงโซล · เวลาทำการ: [ ] (เวลาเกาหลี = เวลาไทย +2 ชม.)</p>
+    <p>LINE: [@ID] · ที่อยู่: 3F, 438 Gangnam-daero, Gangnam-gu, Seoul (서울 강남구 강남대로 438, 3층) · เวลาทำการ: [ ] (เวลาเกาหลี = เวลาไทย +2 ชม.)</p>
     <a class="btn line" href="#">เพิ่มเพื่อน LINE</a>
   </section>
 </main>
@@ -99,5 +102,10 @@
   คลินิกชูริริง (슈리링의원) · สถานพยาบาลที่ลงทะเบียนรับผู้ป่วยชาวต่างชาติ เลขที่ [ ] · เลขที่ผ่านการพิจารณาโฆษณา [심의번호]<br>
   <a href="#">นโยบายความเป็นส่วนตัว</a>
 </footer>
+<script>
+  var t=document.getElementById('price'),r=+t.dataset.rate;
+  document.getElementById('rate-date').textContent=t.dataset.date;
+  if(r>0)t.querySelectorAll('tr').forEach(function(tr){var k=tr.querySelector('[data-krw]');if(k)tr.querySelector('.thb').textContent='≈ '+(Math.round(k.dataset.krw/r/10)*10).toLocaleString();});
+</script>
 </body>
 </html>
